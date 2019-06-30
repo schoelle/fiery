@@ -1,6 +1,6 @@
 # Linked lists
 
-abstract type List<T> {
+abstract type List<T>: Any {
   head: T
   isEmpty: Boolean
   tail: List<T>
@@ -37,10 +37,8 @@ type ListElement<T>[head, tail]: List<T> {
     ListElement<T> -> ListElement<T>[head,tail.append[l]]
   }
   prepend[l] := l.append[this]
-  reversed :=
-    let
-      rest := tail.reversed
-      front := ListElement<T>[head, EmptyList<T>]
-    in
-      front.prepend(rest)
+  reversed := match tail {
+    EmptyList<T> -> this
+    ListElement<T> -> tail.revered.append[head]
+  }
 }

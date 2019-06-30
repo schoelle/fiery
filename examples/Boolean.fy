@@ -1,6 +1,6 @@
 # Simple implementation of Booleans
 
-abstract type Boolean {
+abstract type Boolean: Any {
   and: Function<Boolean,Boolean>
   or: Function<Boolean,Boolean>
   not: Boolean
