@@ -12,9 +12,5 @@ Pure functional means that the language does not have mutability and
 variables. All code are functions, and all that functions do is
 compute a value.
 
-I am planning to implement a parser/interpreter in Rust, mostly to
-learn this very interesting programming language as a
-side-project. So, the code quality might be very low.
-
 Currently, this is much more a scratchboard for ideas and a sandbox
 for playing around with syntax and semantics. No very much to see ...

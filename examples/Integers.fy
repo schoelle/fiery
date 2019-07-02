@@ -21,9 +21,7 @@ type Zero: Integer {
   }
 }
 
-type PositiveNumber[decrement]: Integer {
-  increment := PositiveNumber[this]
-  isZero := False
+abstract type NonZeroInteger: Integer {
   plus[other] := match other {
     PositiveNumber -> plus[other.descrement].increment
     NegativeNumber -> plus[other.increment].decrement
@@ -34,29 +32,26 @@ type PositiveNumber[decrement]: Integer {
     NegativeNumber -> minus[other.increment].increment
     Zero -> this
   }
-  smallerThan[other] := match other {
-    PositiveNumber -> decrement.smallerThan[other.decrement]
-    NegativeNumber -> False
-    Zero -> False
-  }
 }
 
-type NegativeNumber[increment]: Integer {
-  decrement := NegativeNumber[this]
+type PositiveNumber[decrement]: NonZeroInteger {
+  increment := PositiveNumber[this]
   isZero := False
-  plus[other] := match other {
-    PositiveNumber -> plus[other.increment].decrement
-    NegativeNumber -> plus[other.decrement].increment
-    Zero -> this
-  }
-  minus[other] := match other {
-    PositiveNumber -> minus[other.descrement].decrement
-    NegativeNumber -> minus[other.increment].increment
-    Zero -> this
-  }
   smallerThan[other] := match other {
     PositiveNumber -> decrement.smallerThan[other.decrement]
     NegativeNumber -> False
     Zero -> False
   }
+  negated := decrement.negated.decrement
+}
+
+type NegativeNumber[increment]: NonZeroInteger {
+  decrement := NegativeNumber[this]
+  isZero := False
+  smallerThan[other] := match other {
+    PositiveNumber -> True
+    NegativeNumber -> increment.smallerThan[other.increment]
+    Zero -> False
+  }
+  negated := increment.negated.increment
 }

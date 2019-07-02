@@ -6,9 +6,9 @@ abstract type List<T>: Any {
   tail: List<T>
   length: Integer
   last: T
-  add: Function<T,List<T>>
-  append: Function<List<T>,List<T>>
-  prepend: Function<List<T>,List<T>>
+  add: Function<T, List<T>>
+  append: Function<List<T>, List<T>>
+  prepend: Function<List<T>, List<T>>
   reversed: List<T>
 }
 
