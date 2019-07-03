@@ -1,4 +1,4 @@
-abstract type Ordered: Any {
+abstract type Ordered {
   smallerThan: Function<Ordered, Boolean>
   largerThan[other]: Function<Ordered, Boolean> := other.smallerThan[this]
   smallerOrEqualThan: Function<Ordered, Boolean> := equal[other].or[smallerThan[other]]

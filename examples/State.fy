@@ -1,3 +1,3 @@
-abstract type State: Any {
+abstract type State {
   do: Function<Io, State>
 }

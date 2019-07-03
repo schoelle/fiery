@@ -1,3 +1,3 @@
-abstract type Program: Any {
+abstract type Program {
   step: Function<State, State>
 }

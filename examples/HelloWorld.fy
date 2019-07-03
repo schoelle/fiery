@@ -1,3 +1,3 @@
 type Main: Program {
-  step[state] := Io.exit[0][Io.print["Hello World!"][state]]
+  step[state] := state.do[Print["Hello World"]].do[Exit[0]]
 }

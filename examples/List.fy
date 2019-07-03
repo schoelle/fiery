@@ -1,6 +1,6 @@
 # Linked lists
 
-abstract type List<T>: Any {
+abstract type List<T> {
   head: T
   isEmpty: Boolean
   tail: List<T>

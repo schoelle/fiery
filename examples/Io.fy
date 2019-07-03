@@ -1,4 +1,10 @@
 abstract type Io {
-  print: Function<String, Function<State, State>>
-  exit: Function<Integer, Function<State, State>>
+}
+
+type PrintLine[line]: Io {
+  line: String
+}
+
+type Exit[code]: Io {
+  code: Integer
 }
