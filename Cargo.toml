@@ -1,0 +1,8 @@
+[package]
+name = "fiery"
+version = "0.1.0"
+authors = ["Bernd Schoeller <bernd@fams.de>"]
+publish = false
+description = "Fiery programming language"
+
+[dependencies]
