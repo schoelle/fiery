@@ -1,6 +1,6 @@
 # Linked lists
 
-abstract type List<T> {
+abstract type List<=T> {
   head: T
   isEmpty: Boolean
   tail: List<T>
@@ -12,7 +12,7 @@ abstract type List<T> {
   reversed: List<T>
 }
 
-type EmptyList<T>: List<T> {
+type EmptyList<=T>: List<=T> {
   head := Undefined
   tail := Undefined
   isEmpty := True
@@ -24,7 +24,7 @@ type EmptyList<T>: List<T> {
   reversed := EmptyList<T>
 }
 
-type ListElement<T>[head, tail]: List<T> {
+type ListElement<=T>[head, tail]: List<=T> {
   isEmpty := False
   length := tail.length.add[1]
   last := match tail {
