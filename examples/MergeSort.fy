@@ -24,9 +24,9 @@ type MergeSort<T-Ordered> {
 	    EmptyList<T> -> l1
 	    ListElement<T> ->
 	      if l1.head.smallerThan[l2.head] then
-	        this.merged[l1.tail][l2].add[l1.head]
+	        ListElement<T>[l1.head][this.merged[l1.tail][l2]]
 	      else
-                this.merged[l1][l2.tail].add[l2.head]
+	        ListElement<T>[l2.head][this.merged[l1][l2.tail]]
 	      end
 	  }
       }
