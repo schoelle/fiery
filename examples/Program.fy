@@ -1,3 +1,3 @@
 abstract type Program {
-  step: Function<State, State>
+  step: Function<State, List<Op>>
 }

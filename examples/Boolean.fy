@@ -9,12 +9,12 @@ abstract type Boolean {
 
 type True: Boolean {
   not := False
-  and[other] := other
-  or[other] := True
+  and := fun other: other
+  or := fun other: True
 }
 
 type False: Boolean {
   not := True
-  and[other] := False
-  or[other] := other
+  and := fun other: False
+  or := fun other: other
 }

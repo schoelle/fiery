@@ -1,3 +1,2 @@
-abstract type Function<+F,-T> {
-
+abstract type Function<F+Any, R-Any> {
 }

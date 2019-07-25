@@ -1,6 +1,6 @@
 abstract type Ordered {
   smallerThan: Function<Ordered, Boolean>
-  largerThan[other]: Function<Ordered, Boolean> := other.smallerThan[this]
-  smallerOrEqualThan: Function<Ordered, Boolean> := equal[other].or[smallerThan[other]]
-  largerOrEqualThan: Function<Ordered, Boolean> := equal[other].or[largerThan[other]]
+  largerThan: Function<Ordered, Boolean> := fun other: other.smallerThan[this]
+  smallerOrEqualThan: Function<Ordered, Boolean> := fun other: equal[other].or[smallerThan[other]]
+  largerOrEqualThan: Function<Ordered, Boolean> := fun other: equal[other].or[largerThan[other]]
 }

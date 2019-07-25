@@ -1,3 +1,3 @@
 type Main: Program {
-  step[state] := state.do[Print["Hello World"]].do[Exit[0]]
+  step := fun state: EmptyList<Op>.add[Print["Hello World"]].add[Exit[0]]
 }
